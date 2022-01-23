@@ -22,9 +22,6 @@ public class UpdateHandler : IRequestHandler<UpdateRequest, LinkInfo>
     //TODO: turn ON IDENTITY-INSERT for not existing enity
     public async Task<LinkInfo> Handle(UpdateRequest request, CancellationToken cancellationToken)
     {
-        //var entity = await _mediator.Send(_mapper.Map<GetRequest>(request), cancellationToken);
-        //?? Exception pipeline
-
         await using var db = await _dbContextFactory.CreateDbContextAsync(cancellationToken);
 
         await db.Set<Link>()
@@ -32,7 +29,6 @@ public class UpdateHandler : IRequestHandler<UpdateRequest, LinkInfo>
             .InsertOrUpdateAsync(_mapper.Map<LinkInfo>(request), cancellationToken);
 
         await db.SaveChangesAsync(cancellationToken);
-
 
         return await _mediator.Send(_mapper.Map<GetRequest>(request), cancellationToken);
     }

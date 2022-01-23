@@ -20,7 +20,6 @@ public class DeleteHandler : IRequestHandler<DeleteRequest, Unit>
     public async Task<Unit> Handle(DeleteRequest request, CancellationToken cancellationToken)
     {
         var entity = await _mediator.Send(_mapper.Map<GetRequest>(request), cancellationToken);
-        //?? Exception pipeline
 
         await using var db = await _dbContextFactory.CreateDbContextAsync(cancellationToken);
 

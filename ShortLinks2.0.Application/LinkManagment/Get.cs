@@ -4,6 +4,7 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using ShortLinks.Application.LinkManagment.Models;
 using ShortLinks.Domain.Entities;
+using ShortLinks.Kernel.Exceptions;
 using ShortLinks.Persistence;
 
 namespace ShortLinks.Application.LinkManagment;
@@ -25,6 +26,6 @@ public class GetHandler : IRequestHandler<GetRequest, LinkInfo>
             .AsNoTracking()
             .Where(x => x.LinkId == request.Id)
             .ProjectTo<LinkInfo>(_mapper.ConfigurationProvider)
-            .FirstOrDefaultAsync(cancellationToken) ?? default!;
+            .FirstOrDefaultAsync(cancellationToken) ?? throw new NotFoundException(nameof(Link), request.Id);
     }
 }

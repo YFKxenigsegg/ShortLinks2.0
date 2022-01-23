@@ -2,19 +2,22 @@ using AutoMapper;
 using AutoMapper.EquivalencyExpression;
 using MediatR;
 using ShortLinks.Kernel.Converters;
+using ShortLinks.Kernel.Exceptions.Filter;
 using ShortLinks.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 
-//TODO: add logging, global catch exception
+//TODO: add logging
 
 builder.Services.AddPersistence(builder.Configuration);
 
-builder.Services.AddControllers().AddJsonOptions(options =>
-{
-    options.JsonSerializerOptions.Converters.Add(new DateOnlyConverter());
-});
+builder.Services.AddControllers(options =>
+options.Filters.Add(new ApiExceptionFilter()))
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.Converters.Add(new DateOnlyConverter());
+    });
 
 builder.Services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies()
         .Where(x => x.FullName != null && x.FullName.Contains("ShortLinks2.0")).ToArray());
