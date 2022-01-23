@@ -27,8 +27,6 @@ public class CreateHandler : IRequestHandler<CreateRequest, LinkInfo>
         await db.Set<Link>().AddAsync(link, cancellationToken);
         await db.SaveChangesAsync(cancellationToken);
 
-        var getreq = _mapper.Map<GetRequest>(link.LinkId);
-
-        return await _mediator.Send(getreq, cancellationToken);
+        return await _mediator.Send(_mapper.Map<GetRequest>(link.LinkId), cancellationToken);
     }
 }

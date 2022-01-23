@@ -19,7 +19,7 @@ public class UpdateHandler : IRequestHandler<UpdateRequest, LinkInfo>
         , IMediator mediator
         ) => (_dbContextFactory, _mapper, _mediator) = (dbContextFactory, mapper, mediator);
 
-    //exception in swagger (when 'Id' not exist)
+    //TODO: turn ON IDENTITY-INSERT for not existing enity
     public async Task<LinkInfo> Handle(UpdateRequest request, CancellationToken cancellationToken)
     {
         //var entity = await _mediator.Send(_mapper.Map<GetRequest>(request), cancellationToken);

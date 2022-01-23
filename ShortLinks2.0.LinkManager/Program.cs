@@ -1,7 +1,7 @@
 using AutoMapper;
 using AutoMapper.EquivalencyExpression;
 using MediatR;
-using ShortLinks.Application.Converters;
+using ShortLinks.Kernel.Converters;
 using ShortLinks.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,7 +19,7 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 builder.Services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies()
         .Where(x => x.FullName != null && x.FullName.Contains("ShortLinks2.0")).ToArray());
 builder.Services.AddOpenApiDocument(config => config.Title = "ShortLinks2.0 Link Manager API");
-builder.Services.AddMvcCore().AddApiExplorer(); //?
+builder.Services.AddMvcCore().AddApiExplorer(); //
 
 builder.Services.AddAutoMapper((serviceProvider, autoMapper) =>
 {

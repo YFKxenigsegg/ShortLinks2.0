@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ShortLinks2.0.Domain\ShortLinks2.0.Domain.csproj" />
+    <ProjectReference Include="..\ShortLinks2.0.Kernel\ShortLinks2.0.Kernel.csproj" />
   </ItemGroup>
 
 </Project>
