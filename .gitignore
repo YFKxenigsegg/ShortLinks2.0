@@ -343,6 +343,8 @@ healthchecksdb
 
 
 
+[Ll]ogs/
+
+
 NLog.config
 appsettings.json
-*log.txt
