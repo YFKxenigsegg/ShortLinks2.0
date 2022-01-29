@@ -344,4 +344,5 @@ healthchecksdb
 
 
 NLog.config
+appsettings.json
 *log.txt

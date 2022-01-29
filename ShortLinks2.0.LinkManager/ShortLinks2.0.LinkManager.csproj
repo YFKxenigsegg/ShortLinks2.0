@@ -33,4 +33,16 @@
 		<Content Update="appsettings*.json" CopyToPublishDirectory="Never" />
 	</ItemGroup>
 
+	<PropertyGroup>
+		<SourceLogConfigFile>NLog.config.template</SourceLogConfigFile>
+		<TargetLogConfigFile>NLog.config</TargetLogConfigFile>
+		<SourceAppSettingsConfigFile>appsettings.json.template</SourceAppSettingsConfigFile>
+		<TargetAppSettingsConfigFile>appsettings.json</TargetAppSettingsConfigFile>
+	</PropertyGroup>
+
+	<Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+		<Copy SourceFiles="$(SourceLogConfigFile)" DestinationFiles="$(TargetLogConfigFile)" Condition="!Exists($(TargetLogConfigFile))" />
+		<Copy SourceFiles="$(SourceAppSettingsConfigFile)" DestinationFiles="$(TargetAppSettingsConfigFile)" Condition="!Exists($(TargetAppSettingsConfigFile))" />
+	</Target>
+
 </Project>

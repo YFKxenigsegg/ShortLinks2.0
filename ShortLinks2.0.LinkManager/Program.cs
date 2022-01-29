@@ -8,7 +8,7 @@ using ShortLinks.Kernel.Converters;
 using ShortLinks.Kernel.Exceptions.Filter;
 using ShortLinks.Persistence;
 
-var _logger = NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
+var _logger = NLogBuilder.ConfigureNLog("NLog.config").GetCurrentClassLogger();
 _logger.Debug("init main");
 try
 {
