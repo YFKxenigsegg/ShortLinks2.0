@@ -5,13 +5,15 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShortLinks2.0.Application", "ShortLinks2.0.Application\ShortLinks2.0.Application.csproj", "{D58316D8-04D8-4730-9FFE-E95A7C060850}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortLinks2.0.Persistence", "ShortLinks2.0.Persistence\ShortLinks2.0.Persistence.csproj", "{991B5D88-283E-4ED8-8784-584AC8F277A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShortLinks2.0.Persistence", "ShortLinks2.0.Persistence\ShortLinks2.0.Persistence.csproj", "{991B5D88-283E-4ED8-8784-584AC8F277A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortLinks2.0.Domain", "ShortLinks2.0.Domain\ShortLinks2.0.Domain.csproj", "{A344EF7F-1828-490F-90A7-7CDBB0F20511}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShortLinks2.0.Domain", "ShortLinks2.0.Domain\ShortLinks2.0.Domain.csproj", "{A344EF7F-1828-490F-90A7-7CDBB0F20511}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortLinks2.0.LinkManager", "ShortLinks2.0.LinkManager\ShortLinks2.0.LinkManager.csproj", "{1BB6492C-9373-42B5-AEDB-2D052EECAD22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShortLinks2.0.LinkManager", "ShortLinks2.0.LinkManager\ShortLinks2.0.LinkManager.csproj", "{1BB6492C-9373-42B5-AEDB-2D052EECAD22}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortLinks2.0.Kernel", "ShortLinks2.0.Kernel\ShortLinks2.0.Kernel.csproj", "{AEE6BD93-EDDC-4876-AB28-98ED8BCE7382}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShortLinks2.0.Kernel", "ShortLinks2.0.Kernel\ShortLinks2.0.Kernel.csproj", "{AEE6BD93-EDDC-4876-AB28-98ED8BCE7382}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2D2598F0-53E4-41C9-847B-FC15D479E0B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,0 +1,22 @@
+{
+  "help": "https://go.microsoft.com/fwlink/?linkid=866610",
+  "root": false,
+
+  "dependentFileProviders": {
+    "add": {
+      "fileSuffixToExtension": {
+        "add": {
+          ".Mapper.cs": [
+            ".cs"
+          ],
+          ".Request.cs": [
+            ".cs"
+          ],
+          ".Validator.cs": [
+            ".cs"
+          ]
+        }
+      }
+    }
+  }
+}
