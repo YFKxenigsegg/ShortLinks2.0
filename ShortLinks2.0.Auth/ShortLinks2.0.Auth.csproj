@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<RootNamespace>ShortLinks.Auth</RootNamespace>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AutoMapper.Collection.EntityFrameworkCore" Version="7.1.3" />
+		<PackageReference Include="BCrypt.Net-Core" Version="1.6.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.1" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Identity.Core" Version="6.0.1" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\ShortLinks2.0.Domain\ShortLinks2.0.Domain.csproj" />
+		<ProjectReference Include="..\ShortLinks2.0.Kernel\ShortLinks2.0.Kernel.csproj" />
+		<ProjectReference Include="..\ShortLinks2.0.Persistence\ShortLinks2.0.Persistence.csproj" />
+	</ItemGroup>
+
+</Project>

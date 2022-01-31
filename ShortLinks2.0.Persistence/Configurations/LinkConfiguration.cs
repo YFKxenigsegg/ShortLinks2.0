@@ -9,7 +9,7 @@ public class LinkConfiguration : IEntityTypeConfiguration<Link>
     {
         builder.HasOne(x => x.User)
             .WithOne()
-            .HasForeignKey<User>(x => x.UserId)
+            .HasForeignKey<UserLogin>(x => x.Id)
             .IsRequired();
     }
 }

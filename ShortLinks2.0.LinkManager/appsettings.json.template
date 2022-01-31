@@ -2,6 +2,17 @@
   "ConnectionStrings": {
     "DefaultConnection": "Server=;Database=ShortLinks2.0;Trusted_Connection=True;"
   },
+  "AuthOptions": {
+    "AppPrefix": "ShortLinks.local",
+    "Issuer": "AuthServer",
+    "Audience": "*",
+    "Key": "fjXgkgMx9UvsTlcPMxTMr7oiPCUQuMVjGeXhrRYNIgI=",
+    "AccessTokenExpireTimeSpanInMinutes": 20,
+    "RefreshTokenExpireTimeSpanInMinutes": 30,
+    "AllowInsecureTokenRequest": true,
+    "WindowsAuthEnabled": true,
+    "WindowsAuthServerUrl": "https://localhost:44305/"
+  },
   "Logging": {
     "LogLevel": {
       "Default": "Debug",

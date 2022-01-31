@@ -14,6 +14,11 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShortLinks2.0.Kernel", "ShortLinks2.0.Kernel\ShortLinks2.0.Kernel.csproj", "{AEE6BD93-EDDC-4876-AB28-98ED8BCE7382}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2D2598F0-53E4-41C9-847B-FC15D479E0B6}"
+	ProjectSection(SolutionItems) = preProject
+		.filenesting.json = .filenesting.json
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShortLinks2.0.Auth", "ShortLinks2.0.Auth\ShortLinks2.0.Auth.csproj", "{422FDB77-FE15-45FC-821E-1AF2B8ADEE05}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +46,10 @@ Global
 		{AEE6BD93-EDDC-4876-AB28-98ED8BCE7382}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AEE6BD93-EDDC-4876-AB28-98ED8BCE7382}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AEE6BD93-EDDC-4876-AB28-98ED8BCE7382}.Release|Any CPU.Build.0 = Release|Any CPU
+		{422FDB77-FE15-45FC-821E-1AF2B8ADEE05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{422FDB77-FE15-45FC-821E-1AF2B8ADEE05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{422FDB77-FE15-45FC-821E-1AF2B8ADEE05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{422FDB77-FE15-45FC-821E-1AF2B8ADEE05}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ShortLinks2.0.Application\ShortLinks2.0.Application.csproj" />
+    <ProjectReference Include="..\ShortLinks2.0.Auth\ShortLinks2.0.Auth.csproj" />
     <ProjectReference Include="..\ShortLinks2.0.Kernel\ShortLinks2.0.Kernel.csproj" />
     <ProjectReference Include="..\ShortLinks2.0.Persistence\ShortLinks2.0.Persistence.csproj" />
   </ItemGroup>

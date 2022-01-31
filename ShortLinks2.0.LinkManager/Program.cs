@@ -5,8 +5,11 @@ using MediatR;
 using NLog.Web;
 using ShortLinks.Kernel;
 using ShortLinks.Kernel.Converters;
+using ShortLinks.Auth;
 using ShortLinks.Kernel.Exceptions.Filter;
 using ShortLinks.Persistence;
+using NSwag.Generation.Processors.Security;
+using NSwag;
 
 var _logger = NLogBuilder.ConfigureNLog("NLog.config").GetCurrentClassLogger();
 _logger.Debug("init main");
@@ -15,6 +18,7 @@ try
     var builder = WebApplication.CreateBuilder(args);
     builder.Services.AddKernel(builder.Configuration);
     builder.Services.AddPersistence(builder.Configuration);
+    builder.Services.AddIdentity(builder.Configuration);
 
     builder.Services.AddControllers(options =>
     options.Filters.Add(new ApiExceptionFilter()))
@@ -27,7 +31,18 @@ try
 
     builder.Services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies()
             .Where(x => x.FullName != null && x.FullName.Contains("ShortLinks2.0")).ToArray());
-    builder.Services.AddOpenApiDocument(config => config.Title = "ShortLinks2.0 Link Manager API");
+    builder.Services.AddOpenApiDocument(config =>
+    {
+        config.Title = "ShortLinks2.0 Link Manager API";
+        config.AddSecurity("JWT", Enumerable.Empty<string>(), new NSwag.OpenApiSecurityScheme
+        {
+            Type = OpenApiSecuritySchemeType.ApiKey,
+            Name = "Authorization",
+            In = OpenApiSecurityApiKeyLocation.Header,
+            Description = "Type into the textbox: Bearer {your JWT token}."
+        });
+        config.OperationProcessors.Add(new AspNetCoreOperationSecurityScopeProcessor("JWT"));
+    });
     builder.Services.AddMvcCore().AddApiExplorer();
 
     builder.Services.AddAutoMapper((serviceProvider, autoMapper) =>
@@ -44,6 +59,7 @@ try
     }
 
     app.UseRouting();
+    app.UseIdentity();
     app.UseHttpsRedirection();
     app.UseStaticFiles();
 

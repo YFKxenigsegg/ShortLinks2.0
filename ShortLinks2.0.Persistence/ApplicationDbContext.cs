@@ -6,7 +6,7 @@ using System.Reflection;
 namespace ShortLinks.Persistence;
 public class ApplicationDbContext : DbContext
 {
-    public DbSet<User> Users { get; set; } = default!;
+    public DbSet<UserLogin> Users { get; set; } = default!;
     public DbSet<Link> Links { get; set; } = default!;
 
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)

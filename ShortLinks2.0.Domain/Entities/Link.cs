@@ -7,5 +7,5 @@ public class Link
     public DateOnly Created { get; set; }
     public DateOnly ExpirationDate { get; set; }
 
-    public User User { get; set; } = default!;
+    public UserLogin User { get; set; } = default!;
 }
