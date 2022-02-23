@@ -20,6 +20,7 @@ public class UpdateHandler : IRequestHandler<UpdateRequest, LinkInfo>
         ) => (_dbContextFactory, _mapper, _mediator) = (dbContextFactory, mapper, mediator);
 
     //TODO: turn ON IDENTITY-INSERT for not existing enity
+    //TODO: we have the ability to update the abbreviated string, which is incorrect behavior
     public async Task<LinkInfo> Handle(UpdateRequest request, CancellationToken cancellationToken)
     {
         await using var db = await _dbContextFactory.CreateDbContextAsync(cancellationToken);
