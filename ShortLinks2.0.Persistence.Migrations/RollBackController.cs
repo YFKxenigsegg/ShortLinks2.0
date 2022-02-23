@@ -15,5 +15,11 @@ public class RollBackController : ControllerBase
         , IMigrationRunner migrationRunner
         ) => (_logger, _migrationRunner) = (logger, migrationRunner);
 
-    //TODO
+    [HttpGet("Rollback")]
+    public ActionResult RollBack()
+    {
+        _logger.LogInformation("Rollback transaction");
+        _migrationRunner.Rollback(1);
+        return Ok();
+    }
 }
