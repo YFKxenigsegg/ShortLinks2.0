@@ -20,7 +20,7 @@ public class ApplicationDbContext : DbContext
     protected override void ConfigureConventions(ModelConfigurationBuilder builder)
     {
         builder.Properties<DateOnly>()
-                .HaveConversion<DateOnlyDbConverter, DateOnlyDbComparer>()
-                .HaveColumnType("date");
+            .HaveConversion<DateOnlyDbConverter, DateOnlyDbComparer>()
+            .HaveColumnType("date");
     }
 }

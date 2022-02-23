@@ -10,6 +10,7 @@ using ShortLinks.Kernel.Exceptions.Filter;
 using ShortLinks.Persistence;
 using NSwag.Generation.Processors.Security;
 using NSwag;
+using ShortLinks.Persistence.Migrations;
 
 var _logger = NLogBuilder.ConfigureNLog("NLog.config").GetCurrentClassLogger();
 _logger.Debug("init main");
@@ -19,6 +20,7 @@ try
     builder.Services.AddKernel(builder.Configuration);
     builder.Services.AddPersistence(builder.Configuration);
     builder.Services.AddIdentity(builder.Configuration);
+    builder.Services.AddMigrations(builder.Configuration);
 
     builder.Services.AddControllers(options =>
     options.Filters.Add(new ApiExceptionFilter()))
